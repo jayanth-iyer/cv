@@ -1,142 +1,688 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <style media="screen">
-    body {
-      background-color: #EAF6F6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayanth Iyer - Lead Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
 
-    hr {
-      border-style: dotted none none;
-      border-color: grey;
-      border-width: 5px;
-      width: 3%;
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
 
-    img {
-      height: 100px;
-    }
-  </style>
-  
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .skill-badge {
+            transition: all 0.2s ease;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .dark-mode {
+            color-scheme: dark;
+        }
+
+        .light-mode {
+            color-scheme: light;
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .github-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .star-rating {
+            color: #fbbf24;
+        }
+    </style>
 </head>
-<title>Jayanth Iyer</title>
-
 <body>
-  <table>
-    <tr>
-      <td><img src="images/crop-jay-pic.png" alt="Jayanth Profile Picture"></td>
-      <td>
-        <h1>Jayanth Iyer</h1>
-        <p>
-          <em>Lead Software Engineer</em>
-        </p>
-        <p>
-          Java Developer who ❤️ clean code and Commmon Sense
-        </p>
-      </td>
-    </tr>
-  </table>
+    <div id="app" class="bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <!-- Navigation Header -->
+        <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+                <div class="text-xl font-bold gradient-text">JI</div>
+                <div class="flex items-center gap-4">
+                    <a href="#projects" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</a>
+                    <a href="#skills" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Skills</a>
+                    <a href="#contact" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-  <hr />
-  <table>
-    <tr>
-      <td align="center">
-        <h2>Work Experience</h2>
-      </td>
-      <td align="center">
-        <h2>Skills</h2>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <table border="1">
-          <tbody>
-            <tr>
-              <td><b>Designation</b></td>
-              <td><b>Organization</b></td>
-              <td><b>Duration</b></td>
-              <td><b>Location</b></td>
-            </tr>
-            <tr>
-              <td>Lead Software Engineer</td>
-              <td><a href="https://www.franklintempleton.com/">Franklin Templeton</a></td>
-              <td>May 2021 to Present</td>
-              <td>Hyderabad, India</td>
-            </tr>
-            <tr>
-              <td>Sr. Software Engineer</td>
-              <td><a href="https://www.jpmorgan.com/global">JP Morgan Chase & Co.</a></td>
-              <td>May 2015 to May 2021</td>
-              <td>Mumbai, India</td>
-            </tr>
-            <tr>
-              <td>Sr. Associate</td>
-              <td><a href="https://www.ssctech.com/">SS&C Technologies</a></td>
-              <td>Feb 2011 to Apr 2015</td>
-              <td>Mumbai, India</td>
-            </tr>
-            <tr>
-              <td>Associate Consultant</td>
-              <td><a href="https://www.intellectdesign.com/">Polaris Software Labs</a></td>
-              <td>October 2007 to Feb 2011</td>
-              <td>Mumbai, India</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-      <td>
-        <table cellspacing="10">
-          <tr>
-            <td>Java</td>
-            <td>⭐⭐⭐⭐⭐</td>
-            <td>Spring Framework</td>
-            <td>⭐⭐⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Azure Cloud</td>
-            <td>⭐⭐⭐</td>
-            <td>Bamboo CI/CD</td>
-            <td>⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Kubernetes</td>
-            <td>⭐⭐⭐</td>
-            <td>Docker</td>
-            <td>⭐⭐⭐</td>
-          </tr>
-          <tr>
-            <td>Shell Scripting</td>
-            <td>⭐⭐⭐</td>
-            <td>JIRA</td>
-            <td>⭐⭐⭐</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 fade-in">
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-2">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="gradient-text">Jayanth Iyer</span>
+                    </h1>
+                    <h2 class="text-2xl text-gray-600 dark:text-gray-300 mb-6 font-light">
+                        Polyglot Engineering Leader with 18+ years of experience building scalable enterprise systems
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Passionate about clean architecture, cloud-native systems, and mentoring high-performing teams. 
+                        Currently an Engineering Manager at Computershare, scaling technical excellence. 
+                        I love reading, open-source, and solving complex problems with common sense.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="https://github.com/jayanth-iyer" target="_blank" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105">
+                            <i class="fab fa-github mr-2"></i>GitHub Profile
+                        </a>
+                        <a href="https://linkedin.com/in/jayanthsiyer" target="_blank" class="px-6 py-3 bg-gray-200 dark:bg-slate-800 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-700 transition">
+                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg hover:bg-purple-50 dark:hover:bg-slate-900 transition">
+                            Get in Touch
+                        </a>
+                    </div>
+                    <div class="flex gap-8 text-sm text-gray-600 dark:text-gray-400">
+                        <div>
+                            <div class="text-2xl font-bold gradient-text">18+</div>
+                            <div>Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold gradient-text" id="repoCount">--</div>
+                            <div>Public Projects</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold gradient-text">6</div>
+                            <div>Companies</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 rounded-2xl blur-2xl opacity-30"></div>
+                        <img src="images/crop-jay-pic.png" alt="Jayanth Iyer" class="relative w-64 h-64 rounded-2xl object-cover border-4 border-white dark:border-slate-800">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <hr />
-  <h2>Books I Love to Read</h2>
-  <ul>
-    <li><a href="https://www.navalmanack.com/">The Almanack of Naval Ravikant</a></li>
-    <li><a href="https://www.amazon.com/Psychology-Money-Timeless-lessons-happiness/dp/0857197681">The Psychology of Money</a></li>
-    <li><a href="https://www.amazon.in/Industries-Future-Alec-Ross/dp/1476753660">The Industries of Future</a></li>
-    <li><a href="https://www.oreilly.com/library/view/the-managers-path/9781491973882/">The Managers Path</a></li>
-  </ul>
-  <hr />
-  <h2>Social Media</h2>
-  <table>
-    <tr>
-      <td><a href="https://in.linkedin.com/in/jayanthsiyer">LinkedIn</a></td>
-      <td><a href="https://mobile.twitter.com/jayanth_s_iyer">Twitter</a></td>
-    </tr>
-  </table>
-  <hr>
-  <h3><a href="Jayanth_Iyer_Resume_2022.pdf">Download My Resume</a></h3>
+        <!-- Work Experience -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-200 dark:border-slate-800">
+            <h2 class="text-4xl font-bold mb-12">
+                <span class="gradient-text">Work Experience</span>
+            </h2>
+            <div class="space-y-8">
+                <!-- Experience Item 1: Computershare (Current) -->
+                <div class="card-hover p-6 bg-gradient-to-br from-purple-50 to-transparent dark:from-purple-900/20 dark:to-transparent rounded-xl border-2 border-purple-300 dark:border-purple-700">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">Engineering Manager</h3>
+                            <a href="https://www.computershare.com/" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline font-semibold">Computershare</a>
+                        </div>
+                        <span class="text-sm text-purple-600 dark:text-purple-400 font-semibold">Feb 2024 - Present</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">📍 Hyderabad, India</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 italic">Financial services company providing technology and support services.</p>
+                    <ul class="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>• Supervising 19 Engineers across 3 Scrum teams</li>
+                        <li>• Oversaw: Design, Code Reviews, Stakeholder Management, Hiring, and Mentoring</li>
+                        <li>• Orchestrated scaling of the Computershare India Team</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm">Team Leadership</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm">Spring Boot</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2: Paytm -->
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">Engineering Manager</h3>
+                            <a href="https://paytm.com/" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">Paytm</a>
+                        </div>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Sep 2022 - Feb 2024</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">📍 Remote, India</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 italic">Leading digital payments and financial services company.</p>
+                    <ul class="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>• Executed business value for the Co-branded Credit Card business</li>
+                        <li>• Supervised a team of 9 backend developers</li>
+                        <li>• Orchestrated Project Management, Cross-Team Collaboration, and Stakeholder Management</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm">Team Management</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm">Microservices</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3: Franklin Templeton -->
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">Lead Software Engineer</h3>
+                            <a href="https://www.franklintempleton.com/" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">Franklin Templeton</a>
+                        </div>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">May 2021 - Sep 2022</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">📍 Hyderabad, India</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 italic">Investment management organization.</p>
+                    <ul class="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>• Directed a team of 5 developers to execute value for the Fiduciary Trust division</li>
+                        <li>• Orchestrated migration of applications to Azure Kubernetes Service and engineered CI/CD pipelines leveraging Bamboo</li>
+                        <li>• Facilitated cross-team collaboration and accomplished delivery of a new product - Client Meeting Experience to the Alpha stage</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 rounded-full text-sm">Leadership</span>
+                        <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 rounded-full text-sm">Azure Kubernetes</span>
+                        <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 rounded-full text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 rounded-full text-sm">Bamboo CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4: JP Morgan Chase -->
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">Senior Associate</h3>
+                            <a href="https://www.jpmorgan.com/global" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">JP Morgan Chase & Co.</a>
+                        </div>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">May 2015 - May 2021</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">📍 Mumbai, India</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 italic">Global financial services firm.</p>
+                    <ul class="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>• Crafted Software for Securities Lending in Corporate & Investment Banking</li>
+                        <li>• Orchestrated migration of monolith apps to Microservices, reducing production issues by over 50%</li>
+                        <li>• Mentored and developed a team of 3 developers</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm">Microservices</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm">Spring</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 5: SS&C GlobeOp -->
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">Senior Associate</h3>
+                            <a href="https://www.ssctech.com/" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">SS&C GlobeOp Financial Services</a>
+                        </div>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Feb 2011 - May 2015</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">📍 Mumbai, India</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 italic">Provider of technology and services for the investment management industry.</p>
+                    <ul class="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>• Crafted Software for the Pricing Division of Securities & Derivatives</li>
+                        <li>• Collaborated with hedge funds for market data integration</li>
+                        <li>• Controlled and resolved production issues</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded-full text-sm">Spring</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded-full text-sm">Websphere</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 6: Polaris Software Labs -->
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold">Associate Consultant</h3>
+                            <a href="https://www.intellectdesign.com/" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline">Polaris Software Labs</a>
+                        </div>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Oct 2007 - Feb 2011</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-3">📍 Mumbai, India</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 italic">Provider of software solutions for the financial services sector.</p>
+                    <ul class="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+                        <li>• Orchestrated Cash Management business software development</li>
+                        <li>• Collaborated with Dubai Islamic Bank for UAT and support</li>
+                        <li>• Executed migration of code from BEA Weblogic to Websphere</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm">Weblogic</span>
+                        <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm">Websphere</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-200 dark:border-slate-800">
+            <h2 class="text-4xl font-bold mb-4">
+                <span class="gradient-text">Featured Projects</span>
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-12">Hand-picked projects from my GitHub showcase</p>
+            <div id="projects-container" class="grid md:grid-cols-2 gap-8">
+                <!-- Projects will be populated by JavaScript -->
+                <div class="col-span-2 text-center py-12">
+                    <div class="inline-block">
+                        <i class="fas fa-spinner fa-spin text-3xl text-purple-600 dark:text-purple-400"></i>
+                        <p class="mt-4 text-gray-600 dark:text-gray-400">Loading projects...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-200 dark:border-slate-800">
+            <h2 class="text-4xl font-bold mb-12">
+                <span class="gradient-text">Skills & Expertise</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Programming Languages -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-2xl">⚙️</span> Programming Languages
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Java</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">18+ years, Core expertise</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Spring Framework</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Spring Boot, Spring Cloud, Spring Data</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">SQL & Databases</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">PostgreSQL, Oracle, MySQL, MongoDB</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Rust</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Systems programming, Performance-critical applications</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">React</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Modern UI development, Component architecture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-2xl">☁️</span> Cloud & DevOps
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Azure Cloud</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">App Services, Kubernetes, Container Registry</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Kubernetes & Docker</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Containerization, Orchestration, Helm</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">CI/CD & Tools</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Bamboo, Jenkins, Git, JIRA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architecture & Design -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-2xl">🏗️</span> Architecture & Design
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Microservices</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Design patterns, Service mesh, API Gateway</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">System Design</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Scalability, High availability, Performance</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Design Patterns</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">SOLID, Clean Code, Enterprise Patterns</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Methodologies -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-2xl">🛠️</span> Tools & Methodologies
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Agile & Scrum</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Team leadership, Sprint planning</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Testing & QA</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">JUnit, Mockito, Integration testing</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Shell Scripting</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Bash, Python, Automation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Coding Tools -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="text-2xl">🤖</span> AI Coding Tools
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">GitHub Copilot</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">AI-powered code completion, Pair programming</p>
+                        </div>
+                        <div class="skill-badge p-4 bg-gray-50 dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800">
+                            <div class="mb-2">
+                                <span class="font-semibold">Antigravity</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">AI code generation, Development acceleration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-200 dark:border-slate-800">
+            <h2 class="text-4xl font-bold mb-12">
+                <span class="gradient-text">Education & Learning</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-hover p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 rounded-xl border border-purple-200 dark:border-purple-900">
+                    <h3 class="text-2xl font-bold mb-2">University Education</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-2"><span id="edu-degree">Degree pending from resume</span></p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400"><span id="edu-year">Year pending</span></p>
+                </div>
+
+                <div class="card-hover p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800 rounded-xl border border-blue-200 dark:border-blue-900">
+                    <h3 class="text-2xl font-bold mb-4">Continuous Learning</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li>✅ System Design & Architecture</li>
+                        <li>✅ Cloud Platforms (Azure)</li>
+                        <li>✅ Container Orchestration</li>
+                        <li>✅ Modern Java & Frameworks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-200 dark:border-slate-800">
+            <h2 class="text-4xl font-bold mb-12">
+                <span class="gradient-text">GitHub Activity</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" id="statsFollowers">--</div>
+                    <p class="text-gray-600 dark:text-gray-400">Followers</p>
+                </div>
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" id="statsRepos">--</div>
+                    <p class="text-gray-600 dark:text-gray-400">Public Repos</p>
+                </div>
+                <div class="card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2" id="statsStars">--</div>
+                    <p class="text-gray-600 dark:text-gray-400">Total Stars</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-gray-200 dark:border-slate-800">
+            <h2 class="text-4xl font-bold mb-12">
+                <span class="gradient-text">Let's Connect</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                        I'm always interested in hearing about exciting opportunities, collaborations, or just having a great conversation about tech, architecture, and building amazing things.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="https://github.com/jayanth-iyer" target="_blank" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-slate-900 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+                            <i class="fab fa-github text-2xl text-gray-700 dark:text-gray-300"></i>
+                            <div>
+                                <div class="font-semibold">GitHub</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">@jayanth-iyer</div>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/jayanthsiyer" target="_blank" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-slate-900 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+                            <i class="fab fa-linkedin text-2xl text-blue-600 dark:text-blue-400"></i>
+                            <div>
+                                <div class="font-semibold">LinkedIn</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">jayanthsiyer</div>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com/jayanth_s_iyer" target="_blank" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-slate-900 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+                            <i class="fab fa-twitter text-2xl text-blue-400 dark:text-blue-300"></i>
+                            <div>
+                                <div class="font-semibold">Twitter/X</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">@jayanth_s_iyer</div>
+                            </div>
+                        </a>
+                        <a href="mailto:jayanth@example.com" class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-slate-900 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition">
+                            <i class="fas fa-envelope text-2xl text-red-600 dark:text-red-400"></i>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Let me know</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-slate-900 dark:to-slate-800 rounded-xl p-8 border border-purple-200 dark:border-purple-900">
+                    <h3 class="text-2xl font-bold mb-6">Download My Resume</h3>
+                    <a href="JI-Resume-2025.pdf" download class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105 mb-6">
+                        <i class="fas fa-file-pdf mr-2"></i>Download PDF (2025)
+                    </a>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        My comprehensive resume with detailed work history, achievements, and technical certifications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-200 dark:border-slate-800 mt-20 py-8 bg-gray-50 dark:bg-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
+                <p>© 2025 Jayanth Iyer. Crafted with <span class="text-red-500">❤️</span> and clean code.</p>
+                <p class="text-sm mt-2">
+                    <a href="https://github.com/jayanth-iyer/cv" target="_blank" class="hover:text-purple-600 dark:hover:text-purple-400">
+                        This CV is open source on GitHub
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+
+        // Initialize theme on page load
+        function initializeTheme() {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            applyTheme(currentTheme);
+        }
+
+        // Apply theme to both html and body
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                bodyElement.classList.add('dark');
+                document.documentElement.style.colorScheme = 'dark';
+            } else {
+                htmlElement.classList.remove('dark');
+                bodyElement.classList.remove('dark');
+                document.documentElement.style.colorScheme = 'light';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        // Initialize on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeTheme);
+        } else {
+            initializeTheme();
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+
+        // Fetch GitHub Projects
+        async function fetchGitHubProjects() {
+            try {
+                const response = await fetch('https://api.github.com/users/jayanth-iyer/repos?type=public&sort=stars&per_page=6');
+                const repos = await response.json();
+
+                const container = document.getElementById('projects-container');
+                container.innerHTML = '';
+
+                // Filter and sort by stars
+                const topRepos = repos
+                    .filter(repo => !repo.fork)
+                    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                    .slice(0, 6);
+
+                if (topRepos.length === 0) {
+                    container.innerHTML = '<p class="col-span-2 text-center text-gray-600 dark:text-gray-400">No public repositories found.</p>';
+                    return;
+                }
+
+                topRepos.forEach(repo => {
+                    const card = document.createElement('div');
+                    card.className = 'card-hover p-6 bg-gray-50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 flex flex-col';
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start mb-3">
+                            <a href="${repo.html_url}" target="_blank" class="text-xl font-bold text-purple-600 dark:text-purple-400 hover:underline">
+                                ${repo.name}
+                            </a>
+                            <span class="text-sm bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-300 px-2 py-1 rounded">
+                                ⭐ ${repo.stargazers_count}
+                            </span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">${repo.description || 'No description'}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${repo.language ? `<span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded text-sm">${repo.language}</span>` : ''}
+                        </div>
+                        <a href="${repo.html_url}" target="_blank" class="text-purple-600 dark:text-purple-400 hover:underline font-semibold">
+                            View on GitHub →
+                        </a>
+                    `;
+                    container.appendChild(card);
+                });
+
+                document.getElementById('repoCount').textContent = repos.filter(r => !r.fork).length;
+            } catch (error) {
+                console.error('Error fetching GitHub projects:', error);
+                document.getElementById('projects-container').innerHTML = '<p class="col-span-2 text-center text-gray-600 dark:text-gray-400">Error loading projects. Please try again later.</p>';
+            }
+        }
+
+        // Fetch GitHub Stats
+        async function fetchGitHubStats() {
+            try {
+                const response = await fetch('https://api.github.com/users/jayanth-iyer');
+                const user = await response.json();
+
+                document.getElementById('statsFollowers').textContent = user.followers;
+                document.getElementById('statsRepos').textContent = user.public_repos;
+
+                // Calculate total stars
+                const reposResponse = await fetch('https://api.github.com/users/jayanth-iyer/repos?per_page=100');
+                const repos = await reposResponse.json();
+                const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+                document.getElementById('statsStars').textContent = totalStars;
+            } catch (error) {
+                console.error('Error fetching GitHub stats:', error);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchGitHubProjects();
+            fetchGitHubStats();
+        });
+    </script>
 </body>
-
 </html>
